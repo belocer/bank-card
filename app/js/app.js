@@ -47,12 +47,12 @@ class Box3D {
 window.addEventListener('load', () => {
     let obg_card = {
         card: '.glass', // Анимируемый блок
-        card__container: '.wave__container', // Блок контейнер
+        card__container: '.wave__card', // Блок контейнер
         tiltAngle: 15, // угол отклонения в градусах
     };
     new Box3D(obg_card);
 
-
+    /* Меняю волны */
     let wave = document.getElementById('wave');
     let wave__wrap = document.querySelector('.wave__wrap');
     let wave_up = document.querySelector('.wave_up');
@@ -80,4 +80,4 @@ window.addEventListener('load', () => {
             wave.classList.remove('opacity_wave')
         }, 1000)
     }, 10000)
-})
+});

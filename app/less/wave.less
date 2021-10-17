@@ -6,6 +6,55 @@
   justify-content: center;
   align-items: center;
   transition: all 1s;
+  //background: url(../img/dest/starry-sky.webp) center center no-repeat no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 10;
+  transform-style: preserve-3d;
+  transform: perspective(1200px);
+
+/*  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    z-index: 11;
+    background: url(../img/dest/star_layer1.webp) center center no-repeat no-repeat;
+    background-size: cover;
+    width: 300%;
+    height: 300%;
+    animation: linear star_rotate 1200s infinite;
+    //opacity: .5;
+    filter: blur(3px);
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    z-index: 11;
+    background: url(../img/dest/star_layer2.webp) center center no-repeat no-repeat;
+    background-size: cover;
+    background-origin: border-box;
+    width: 200%;
+    height: 200%;
+    animation: linear star_rotate 1100s infinite reverse;
+    opacity: .9;
+    filter: blur(1px);
+  }*/
+
+}
+
+@keyframes star_rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .wave__card {
@@ -13,12 +62,14 @@
   width: 650px;
   height: 650px;
   overflow: hidden;
-  background: #523F84;
+  //background: #523F84;
+  background: #291455;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   box-shadow: 10px 10px 30px rgba(62, 62, 62, 0.76), -12px -10px 45px #ffffff;
+  //box-shadow: 10px 10px 30px rgba(23, 23, 23, 0.93), -12px -10px 45px #090909;
   transition: all .9s;
   z-index: 100;
 
@@ -28,6 +79,7 @@
     inset: 18px;
     border-radius: 50%;
     box-shadow: inset 10px 10px 20px rgba(0, 0, 0, .5), inset -5px -5px 15px #473773;
+    //box-shadow: inset 10px 10px 20px rgba(0, 0, 0, .5), inset -5px -5px 15px #0e032a;
     z-index: 100;
   }
 }
@@ -123,8 +175,7 @@
 
   &:hover .glass__userName,
   &:hover .glass__cardNumber,
-  &:hover .glass__bankName
-  {
+  &:hover .glass__bankName {
     color: #fff;
     text-shadow: none;
     transition: all 1s;
@@ -160,7 +211,7 @@
     -moz-background-clip: text;
     background-clip: text;
     color: rgb(227, 227, 227);
-    text-shadow: rgba(255,255,255,0.5) 0px 1px 1px;
+    text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 1px;
     transition: all 1s;
   }
 
@@ -172,7 +223,7 @@
     -moz-background-clip: text;
     background-clip: text;
     color: rgb(227, 227, 227);
-    text-shadow: rgba(255,255,255,0.5) 0px 1px 1px;
+    text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 1px;
     transition: all 1s;
     letter-spacing: 2px;
     margin-bottom: -50px;
@@ -186,7 +237,7 @@
     -moz-background-clip: text;
     background-clip: text;
     color: rgb(227, 227, 227);
-    text-shadow: rgba(255,255,255,0.5) 0px 1px 1px;
+    text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 1px;
     transition: all 1s;
   }
 }
