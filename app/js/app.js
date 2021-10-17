@@ -32,11 +32,11 @@ class Box3D {
                 this.elementDirectionalShift(-this.tiltAngle, this.tiltAngle, 8, 10)
             }
 
-        }, 10);
+        }, 1);
 
         this.сountdownAnim = setTimeout(() => {
             this.clearTagStyle(this.card)
-        },1000)
+        }, 1000)
     }
 
     elementDirectionalShift(x, y) {
@@ -45,11 +45,39 @@ class Box3D {
 }
 
 window.addEventListener('load', () => {
-let obg = {
-    card: '.glass', // Анимируемый блок
-    card__container: '.wave__container', // Блок контейнер
-    tiltAngle: 15, // угол отклонения в градусах
-};
+    let obg_card = {
+        card: '.glass', // Анимируемый блок
+        card__container: '.wave__container', // Блок контейнер
+        tiltAngle: 15, // угол отклонения в градусах
+    };
+    new Box3D(obg_card);
 
-new Box3D(obg);
+
+    let wave = document.getElementById('wave');
+    let wave__wrap = document.querySelector('.wave__wrap');
+    let wave_up = document.querySelector('.wave_up');
+    let wave_down = document.querySelector('.wave_down');
+    let flagSwitch = true;
+
+    setInterval(() => {
+        wave.classList.add('opacity_wave')
+        setTimeout(() => {
+            if (flagSwitch) {
+                wave_up.style.background = 'url(../img/dest/wave_up1.webp) center center repeat-x';
+                wave_down.style.background = 'url(../img/dest/wave_down1.webp) center center repeat-x';
+                flagSwitch = false;
+            } else {
+                wave_up.style.background = 'url(../img/dest/wave_up.webp) center center repeat-x';
+                wave_down.style.background = 'url(../img/dest/wave_down.webp) center center repeat-x';
+                flagSwitch = true;
+            }
+            wave_up.style.backgroundSize = 'contain';
+            wave_down.style.backgroundSize = 'contain';
+        }, 1000)
+
+        setTimeout(() => {
+            wave__wrap.style.transform = flagSwitch ? 'rotate(-35deg)' : 'rotate(35deg)'
+            wave.classList.remove('opacity_wave')
+        }, 1000)
+    }, 10000)
 })
