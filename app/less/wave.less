@@ -68,12 +68,12 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  box-shadow: 10px 10px 30px rgba(62, 62, 62, 0.76), -12px -10px 45px #ffffff;
+  box-shadow: 10px 10px 30px rgba(62, 62, 62, 0.76), -12px -10px 45px #ffffff, -14px -12px 65px #ffffff;
   //box-shadow: 10px 10px 30px rgba(23, 23, 23, 0.93), -12px -10px 45px #090909;
   transition: all .9s;
   z-index: 100;
 
-  &::before {
+  /*&::before {
     content: '';
     position: absolute;
     inset: 18px;
@@ -81,6 +81,21 @@
     box-shadow: inset 10px 10px 20px rgba(0, 0, 0, .5), inset -5px -5px 15px #473773;
     //box-shadow: inset 10px 10px 20px rgba(0, 0, 0, .5), inset -5px -5px 15px #0e032a;
     z-index: 100;
+  }*/
+
+  .wave__inset {
+    box-sizing: border-box;
+    width: 651px;
+    height: 651px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: inset 10px 10px 20px rgba(0, 0, 0, .5), inset -10px -10px 15px #473773;
+    z-index: 100;
+    border: 20px solid #473773;
   }
 }
 
@@ -172,12 +187,13 @@
   justify-content: space-between;
   flex-direction: column;
   transition: all 1s;
+  pointer-events: none;
 
   &:hover .glass__userName,
-  &:hover .glass__cardNumber,
-  &:hover .glass__bankName {
-    color: #fff;
-    text-shadow: none;
+  &:hover .glass__cardNumber
+  {
+    color: #271852;
+    text-shadow: rgba(241, 241, 241, 0.41) 0px 1px 1px;
     transition: all 1s;
   }
 
@@ -210,19 +226,20 @@
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
-    color: rgb(227, 227, 227);
+    color: #473773;
     text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 1px;
     transition: all 1s;
   }
 
   .glass__cardNumber {
     font-family: 'Oswald', sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 28px;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
-    color: rgb(227, 227, 227);
+    //color: rgb(227, 227, 227);
+    color: #473773;
     text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 1px;
     transition: all 1s;
     letter-spacing: 2px;

@@ -63,12 +63,12 @@ window.addEventListener('load', () => {
         wave.classList.add('opacity_wave')
         setTimeout(() => {
             if (flagSwitch) {
-                wave_up.style.background = 'url(../img/dest/wave_up1.webp) center center repeat-x';
-                wave_down.style.background = 'url(../img/dest/wave_down1.webp) center center repeat-x';
+                wave_up.style.background = 'url(https://googleman.ru/bank_card/img/dest/wave_up1.webp) center center repeat-x';
+                wave_down.style.background = 'url(https://googleman.ru/bank_card/img/dest/wave_down1.webp) center center repeat-x';
                 flagSwitch = false;
             } else {
-                wave_up.style.background = 'url(../img/dest/wave_up.webp) center center repeat-x';
-                wave_down.style.background = 'url(../img/dest/wave_down.webp) center center repeat-x';
+                wave_up.style.background = 'url(https://googleman.ru/bank_card/img/dest/wave_up.webp) center center repeat-x';
+                wave_down.style.background = 'url(https://googleman.ru/bank_card/img/dest/wave_down.webp) center center repeat-x';
                 flagSwitch = true;
             }
             wave_up.style.backgroundSize = 'contain';
@@ -79,5 +79,5 @@ window.addEventListener('load', () => {
             wave__wrap.style.transform = flagSwitch ? 'rotate(-35deg)' : 'rotate(35deg)'
             wave.classList.remove('opacity_wave')
         }, 1000)
-    }, 10000)
+    }, 20000)
 });
