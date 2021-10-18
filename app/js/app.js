@@ -2,8 +2,10 @@ class Box3D {
     constructor(obj) {
         this.varDebounce = 0; // ТаймАут срабатывания всей анимации
         this.сountdownAnim = 0; // ТаймАут срабатывания всей анимации
+        this.countCoins = 0; // ТаймАут срабатывания всей анимации
         this.card = document.querySelector(obj.card); // Анимируемый блок
         this.card__container = document.querySelector(obj.card__container); // Блок контейнер
+        this.coins = document.querySelectorAll(obj.coins); // Монеты
         this.tiltAngle = obj.tiltAngle || 10; // угол отклонения в градусах
         this.card__container.addEventListener('mousemove', this.mainAnimate.bind(this));
     }
@@ -41,14 +43,25 @@ class Box3D {
 
     elementDirectionalShift(x, y) {
         this.card.style.transform = `perspective(1200px) rotateX(${x}deg) rotateY(${y}deg) translateZ(0)`;
+        let i = 1
+        clearTimeout(this.countCoins);
+        this.coins.forEach((item, index, arr) => {
+            this.countCoins = setTimeout(() => {
+                let r = Math.floor(Math.random() * 30)
+                i += 15;
+                item.style.transform = `translateX(${x - i + r}px) translateY(${y - i + r}px) rotate(${r}deg)`;
+                i > 100 ? i = 0 : ''
+            }, 100 * index)
+        })
     }
 }
 
 window.addEventListener('load', () => {
     let obg_card = {
         card: '.glass', // Анимируемый блок
-        card__container: '.wave__card', // Блок контейнер
+        card__container: '.wave__container', // Блок контейнер
         tiltAngle: 15, // угол отклонения в градусах
+        coins: '.coins li'
     };
     new Box3D(obg_card);
 

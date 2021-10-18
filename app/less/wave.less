@@ -12,6 +12,7 @@
   z-index: 10;
   transform-style: preserve-3d;
   transform: perspective(1200px);
+  overflow: hidden;
 
 /*  &::before {
     content: '';
@@ -225,7 +226,7 @@
     left: 5px;
     width: 100px;
     height: 45px;
-    background: url(../img/dest/chip.webp) center center no-repeat no-repeat;
+    background: url(../img/dest/chip2.webp) center center no-repeat no-repeat;
     background-size: contain;
     display: inline-block;
     z-index: 120;
@@ -275,4 +276,83 @@
 .opacity_wave {
   transition: opacity 1s;
   opacity: 0;
+}
+
+.coins {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: all 2s;
+
+  li {
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    transition: all 2s;
+  }
+
+  .eth1 {
+    left: 100px;
+    top: 100px;
+    width: 100px;
+    height: 100px;
+    filter: blur(2px);
+  }
+  .btc1 {
+    width: 170px;
+    height: 170px;
+    left: 209px;
+    top: 63%;
+    transform: perspective(1200px) rotate(150deg);
+    filter: blur(1px);
+  }
+  .dog {
+    left: 20%;
+    top: 75px;
+    width: 80px;
+    height: 80px;
+  }
+  .xrp {
+    left: -4px;
+    bottom: -9%;
+    width: 250px;
+    height: 250px;
+    transform: perspective(1200px) rotateY(40deg) rotateX(-15deg);
+    filter: blur(5px);
+  }
+  .z-cash {
+    left: 530px;
+    top: 324px;
+    width: 40px;
+    height: 40px;
+  }
+  .z-cash1 {
+    right: 20%;
+    bottom: 40%;
+    width: 100px;
+    height: 100px;
+  }
+  .btc5 {
+    right: -2%;
+    top: 20%;
+    width: 200px;
+    height: 200px;
+    filter: blur(1px);
+  }
+  .ada {
+    right: 9%;
+    bottom: 15%;
+    width: 150px;
+    height: 150px;
+    transform: perspective(1200px) rotateY(40deg) rotateX(15deg);
+  }
+  .eth7 {
+    right: -2%;
+    top: -8%;
+    width: 300px;
+    height: 300px;
+    filter: blur(5px);
+  }
 }
