@@ -11,7 +11,7 @@ class Box3D {
     }
 
     clearTagStyle(el) {
-        el.removeAttribute('style')
+        el.forEach(item => item.removeAttribute('style'));
     }
 
     mainAnimate(e) {
@@ -37,8 +37,9 @@ class Box3D {
         }, 1);
 
         this.сountdownAnim = setTimeout(() => {
-            this.clearTagStyle(this.card)
-        }, 1000)
+            this.clearTagStyle([this.card])
+            this.clearTagStyle(this.coins)
+        }, 2000)
     }
 
     elementDirectionalShift(x, y) {
@@ -49,7 +50,7 @@ class Box3D {
             this.countCoins = setTimeout(() => {
                 let r = Math.floor(Math.random() * 30)
                 i += 15;
-                item.style.transform = `translateX(${x - i + r}px) translateY(${y - i + r}px) rotate(${r}deg)`;
+                item.style.transform = `perspective(1200px) translateX(${x - i + r}px) translateY(${y - i + r}px) rotateX(${r}deg) rotateY(${r}deg)`;
                 i > 100 ? i = 0 : ''
             }, 100 * index)
         })
