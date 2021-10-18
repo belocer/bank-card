@@ -74,6 +74,9 @@
   transition: all .9s;
   z-index: 100;
 
+  min-width: 650px;
+  min-height: 650px;
+
   /*&::before {
     content: '';
     position: absolute;
@@ -190,6 +193,11 @@
   transition: all 1s;
   pointer-events: none;
 
+  @media screen and (max-width: 750px) {
+    width: 310px;
+    height: 185px;
+  }
+
   &:hover .glass__userName,
   &:hover .glass__cardNumber
   {
@@ -207,6 +215,11 @@
     display: inline-block;
     background: url(../img/dest/master_card.webp) center center no-repeat no-repeat;
     background-size: contain;
+
+    @media screen and (max-width: 750px) {
+      width: 40px;
+      height: 25px;
+    }
   }
 
   .glass__iconNFC {
@@ -218,6 +231,11 @@
     display: inline-block;
     background: url(../img/dest/nfc.webp) center center no-repeat no-repeat;
     background-size: contain;
+
+    @media screen and (max-width: 750px) {
+      width: 15px;
+      height: 15px;
+    }
   }
 
   .glass__chip {
@@ -231,6 +249,11 @@
     display: inline-block;
     z-index: 120;
     border-radius: 5px;
+
+    @media screen and (max-width: 750px) {
+      width: 65px;
+      height: 32px;
+    }
   }
 
   .glass__userName {
@@ -243,6 +266,10 @@
     color: #473773;
     text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 1px;
     transition: all 1s;
+
+    @media screen and (max-width: 750px) {
+      font-size: 16px;
+    }
   }
 
   .glass__cardNumber {
@@ -258,6 +285,10 @@
     transition: all 1s;
     letter-spacing: 2px;
     margin-bottom: -94px;
+
+    @media screen and (max-width: 750px) {
+      font-size: 20px;
+    }
   }
 
   .glass__bankName {
@@ -291,6 +322,10 @@
     position: absolute;
     z-index: 1;
     transition: all 2s;
+  }
+
+  @media screen and (max-width: 750px) {
+    display: none;
   }
 
   .eth1 {

@@ -51,7 +51,8 @@ class Box3D {
                 let r = Math.floor(Math.random() * 30)
                 i += 15;
                 item.style.transform = `perspective(1200px) translateX(${x - i + r}px) translateY(${y - i + r}px) rotateX(${r}deg) rotateY(${r}deg)`;
-                i > 100 ? i = 0 : ''
+                i > 100 ? i = 0 : '';
+                //item.style.filter = i % 3 === 0 ? 'blur(1px)' : 'blur(0)';
             }, 100 * index)
         })
     }
